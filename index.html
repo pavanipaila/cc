@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Serverless Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Our Landing Page</h1>
+    <p>Hosted with Serverless Deployment 🚀</p>
+  </header>
+
+  <section class="hero">
+    <h2>Your Solution, Simplified</h2>
+    <p>Fast, secure, and scalable landing page powered by serverless hosting.</p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>⚡ Fast</h3>
+      <p>Optimized for performance with serverless technology.</p>
+    </div>
+    <div class="feature">
+      <h3>🔒 Secure</h3>
+      <p>Deployed on trusted providers like Netlify.</p>
+    </div>
+    <div class="feature">
+      <h3>📈 Scalable</h3>
+      <p>Grow without worrying about infrastructure.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+
+    <!-- Netlify form:
+         - data-netlify="true" lets Netlify detect the form at build time
+         - netlify-honeypot="bot-field" creates a hidden spam field
+         - action="thankyou.html" redirects to the thank you page after success
+    -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thankyou.html" id="contactForm">
+      <!-- REQUIRED: tells Netlify which form this is -->
+      <input type="hidden" name="form-name" value="contact" />
+
+      <!-- Honeypot field (invisible to real users) -->
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <label class="sr">Name</label>
+      <input type="text" name="name" placeholder="Your Name" required />
+
+      <label class="sr">Email</label>
+      <input type="email" name="email" placeholder="Your Email" required />
+
+      <label class="sr">Message</label>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit" id="submitBtn">Send Message</button>
+
+      <p id="formStatus" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Serverless Landing Page</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
